@@ -174,7 +174,7 @@ drawHypsoCurves <- function(x, y, print_result = FALSE){
     g <- g + annotate("text", y=minimum + 15, x= 15, label = paste("HI = ", round(HI,3), sep = ""), color="blue", fontface="bold")
     print(g)
     if(print_result == TRUE){
-      png(paste("HYPSO_OUTPUT/", i, ".png", sep = ""))
+      png(paste("HYPSO_OUTPUT/", i, ".png", sep = ""),units = "cm",width = 15,height = 5,res = 300)
       print(g)
       dev.off()
     }
@@ -213,7 +213,7 @@ drawHypsoCurves <- function(x, y, print_result = FALSE){
     g <- g + geom_vline(aes(xintercept=0.6),color="blue", size = 0.2) #separate equilibrium and young stages
     g <- g + theme(panel.background = element_rect(fill = "#BFD5E3", colour = "#6D9EC1", size = 2, linetype = "solid"), panel.grid.major = element_line(size = 0.5, linetype = 'solid',colour = "white"), panel.grid.minor = element_line(size = 0.25, linetype = 'solid', colour = "white"))
     #saving_plot
-    png("HYPSO_OUTPUT/Summary_plot.png")
+    png("HYPSO_OUTPUT/Summary_plot.png",units = "cm",width = 15,height = 5,res = 300)
     print(g)
     dev.off()
     #Print the summary table and export it to CSV
