@@ -144,8 +144,8 @@ drawHypsoCurves <- function(x, y, print_result = FALSE){
     g <- ggplot(data = data, aes(x = AREA_NORM * 100, y = CLASS))
     g <- g + geom_line(color = "blue", size = 2)
     g <- g + geom_point(color = "green", size = 3, shape = 18)
-    g <- g + labs(title = paste(i, ". Hypsometric Curve  of Catchment ", name, sep = ""),
-                  x = "% of Area above elevation h",  y = "Elevation in meters")
+    g <- g + labs(title = paste(i, ". Curva hipsométrica de la cuenca ", name, sep = ""),
+                  x = "% Area por encima de la elevación h",  y = "Elevación (m)")
     g <- g + ylim(minimum, maximum)
     g <- g + xlim(0, 100)
     g <- g + theme(panel.background = element_rect(fill = "#BFD5E3", colour = "#6D9EC1",
