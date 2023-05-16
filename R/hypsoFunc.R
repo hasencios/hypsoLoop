@@ -144,7 +144,7 @@ drawHypsoCurves <- function(x, y, print_result = FALSE){
     g <- ggplot(data = data, aes(x = AREA_NORM * 100, y = CLASS))
     g <- g + geom_line(color = "blue", size = 2)
     g <- g + geom_point(color = "green", size = 3, shape = 18)
-    g <- g + labs(title = paste(i, ". Curva hipsométrica de la cuenca ", name, sep = ""),
+    g <- g + labs(title = "Curva hipsométrica de la Unidad Hidrográfica",#paste(i, ". Curva hipsométrica de la cuenca ", name, sep = "")
                   x = "% Area por encima de la elevación h",  y = "Elevación (m)")
     g <- g + ylim(minimum, maximum)
     g <- g + xlim(0, 100)
@@ -174,7 +174,7 @@ drawHypsoCurves <- function(x, y, print_result = FALSE){
     g <- g + annotate("text", y=minimum + 15, x= 15, label = paste("HI = ", round(HI,3), sep = ""), color="blue", fontface="bold")
     print(g)
     if(print_result == TRUE){
-      png(paste("HYPSO_OUTPUT/", i, ".png", sep = ""),units = "cm",width = 15,height = 5,res = 300)
+      png(paste("HYPSO_OUTPUT/", i, ".png", sep = ""),units = "cm",width = 15,height = 8,res = 300)
       print(g)
       dev.off()
     }
